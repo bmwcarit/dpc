@@ -1,0 +1,9 @@
+[Unit]
+Description=Starvate CPU
+
+[Service]
+ExecStart=/usr/bin/stress -c 1
+CPUQuota=20%
+
+[Install]
+WantedBy=multi-user.target

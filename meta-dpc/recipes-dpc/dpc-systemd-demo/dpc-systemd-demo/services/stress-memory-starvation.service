@@ -1,0 +1,11 @@
+[Unit]
+Description=Starvate memory
+
+[Service]
+MemoryAccounting=true
+ExecStart=/usr/bin/stress -m 2 --vm-bytes 25M --vm-keep
+MemoryLimit=10M
+OOMScoreAdjust=-1000
+
+[Install]
+WantedBy=multi-user.target
